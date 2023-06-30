@@ -8,3 +8,14 @@ def curso(self):
     curso.save()
     documentoTexto=f"---->Curso: {curso.nombre} Camada: {curso.camada}"
     return HttpResponse(documentoTexto)
+def inicio(request):
+    return render (request,"inicio.html")
+def cursos(request):
+    return render (request, "cursos.html")
+def profesores(request):
+    return HttpResponse("Vista profesores")
+def estudiantes(request):
+    return HttpResponse("Vista estudiantes")
+def entregables(request):
+    return HttpResponse("Vista entregables")
+
