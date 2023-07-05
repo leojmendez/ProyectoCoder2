@@ -13,9 +13,9 @@ def inicio(request):
 def cursos(request):
     return render (request, "cursos.html")
 def profesores(request):
-    return HttpResponse("Vista profesores")
+    return render (request, "profesores.html")
 def estudiantes(request):
-    return HttpResponse("Vista estudiantes")
+    return render (request, "estudiantes.html")
 def entregables(request):
-    return HttpResponse("Vista entregables")
+    return render (request, "entregables.html")
 
