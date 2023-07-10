@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    {% if miFormulario.errors %}
+    <p style="color: red;"> Estaán mal los datos.</p>
+    {% endif %}
+    <p>Estamos buscando la camada número: {{camada}}</p>
+    {% if curso %}
+        <ul>
+            {% for cur in curso %} 
+                <li>{{cur.nombre}}</li>
+                <li>{{cur.camada}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
