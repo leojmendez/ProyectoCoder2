@@ -1,11 +1,27 @@
 {% extends 'padre.html' %}
 {% load static %}
 {% block contenidoQueCambia %}
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-black">
+                    <!-- Page heading-->
+                    <h1 class="mb-5" style="color: black;" > ESTUDIANTES</h1>
+                    
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <!--En este lugar va lo que cambia y se asocia a la vista-->
 {% if miFormulario.errors %}
     <p style="color: red;"> Estaán mal los datos.</p>
 {% endif %}
 
+<h3>Registre un nuevo estudiante:</h3>
 <form action="" method="POST"> {% csrf_token %} 
     <table>
         {{miFormulario.as_table}}

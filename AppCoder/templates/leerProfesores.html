@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Casa de Estudios
+        </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="AppCoder/assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppCoder/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'Inicio' %}" style="font-weight: bold;"> Inicio</a>
+                <a class="navbar-brand" href="{% url 'Cursos' %}" style="font-weight:bold;"> Cursos </a>
+                <a class="navbar-brand" href="{% url 'Profesores' %}" style= "font-weight:bold;">Profesores</a>
+                <a class="navbar-brand" href="{% url 'Estudiantes' %}" style= "font-weight:bold;">Estudiantes</a>
+                <a class="navbar-brand" href="{% url 'Entregables' %}" style= "font-weight:bold;">Entregables</a>
+                <a class="btn btn-primary" href="#signup">Log in</a>
+            </div>
+        </nav>
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Profesores</title>
+</head>-->
+<br>
+<p style="color: black; font-weight:bold; size:24px"> Listado de Profesores: </p>
+<br>
+<body>
+    <ul>
+        {% for p in profesores %}
+            <li>
+                {{p}}
+                <div class="botones">
+                    <button>
+                        <a href="{% url 'EliminarProfesor' p.nombre %}">Eliminar</a>
+                    </button>
+                    <button>
+                        <a href="{% url 'EditarProfesor' p.nombre %}">Editar</a>
+                    </button>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+    <br>
+    <br>
+
+    <a href="{%url 'Profesores' %}"> Agregar nuevo profesor.</a>
+</body>
+</html>

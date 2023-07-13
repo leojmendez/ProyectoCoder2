@@ -1,16 +1,39 @@
 {% extends 'padre.html' %}
 {% load static %}
 {% block contenidoQueCambia %}
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-black">
+                    <!-- Page heading-->
+                    <h1 class="mb-5" style="color: black;" > CURSOS</h1>
+                    
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <!--En este lugar va lo que cambia y se asocia a la vista-->
 {% if miFormulario.errors %}
-    <p style="color: red;"> Estaán mal los datos.</p>
+    <p style="color: red;"> Están mal los datos.</p>
 {% endif %}
 
-<form action="" method="POST"> {% csrf_token %} 
-    <table>
-        {{miFormulario.as_table}}
-    </table>
-    <input type="submit" value="Enviar">
-</form>
+<h3>Registre un nuevo curso:</h3>
+    <form action="" method="POST" > {% csrf_token %} 
+       
+        <table>
+            {{miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
 
+    
+    <!-- Agrega el texto adicional -->
+        <br>
+        <p><a href="{%url 'BusquedaCamada' %}" style="color: black; font-weight:bold;"> Busque un curso existente</a></p>
+    
+   
 {% endblock %}

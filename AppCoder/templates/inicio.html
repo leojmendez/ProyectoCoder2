@@ -1,6 +1,33 @@
 {% extends 'padre.html' %}
 {% load static %}
 {% block contenidoQueCambia %}
-<!--En este lugar va lo que cambia y se asocia a la vista-->
-
+<header class="masthead">
+     <div class="container position-relative">
+         <div class="row justify-content-center">
+             <div class="col-xl-6">
+                 <div class="text-center text-black">
+                     <!-- Page heading-->
+                     <h1 class="mb-5" style="color: black;" > Casa de Estudios</h1>
+                     
+                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header>
+    
+    {% if cursos %}        
+        <p>Estamos buscando la camada número: {{camada}}</p>
+        
+        <ul>
+            {% for cur in cursos %} 
+                 <li>{{cur.nombre}}</li>
+                 <li>{{cur.camada}}</li>
+            {% endfor %}
+         </ul>
+     {% else %}
+         <p> No hay datos con esa camada</p>
+    {% endif %}
+    <p style="color: red;">{{respuesta}}</p>
 {% endblock %}

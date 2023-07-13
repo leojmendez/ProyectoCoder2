@@ -2,8 +2,9 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
+<p style= "color: black; font-weight: bold;"> Ingrese el número de la camada</p>
     {% if miFormulario.errors %}
-        <p style="color: red;"> Estaán mal los datos.</p>
+        <p style="color: red;"> Están mal los datos.</p>
     {% endif %}
 
     <form action="buscar" method = "GET">
